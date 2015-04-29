@@ -2,6 +2,18 @@ extends layout
 
 block content
 
+    nav.navbar.elevated
+        div.nav-items
+            div.about-nav-item.nav-item
+                span.value
+                    | About
+            div.experience-nav-item.nav-item
+                span.value
+                    | Experience
+            div.skills-nav-item.nav-item
+                span.value
+                    | Skills
+
     div.parallax
 
         div.splash-section.parallax__layer.parallax__layer--back
@@ -11,11 +23,15 @@ block content
                         | Russell Trupiano
                     div.splash-text-tagline
                         | Programmer. // Hacker. // Photographer
+                //- button.scroll-button Scroll Down!
 
-        div.page-content-section.parallax__layer.parallax__layer--base
+        div.page-content-section.elevated.parallax__layer.parallax__layer--base
             div#all-content-wrap
-                section.about-section
+                section.about-section.full-page
+                section.experience-section.full-page
+                section.skills-section.full-page
+                section.contact-section
 
-    div.color-test
+
 
 

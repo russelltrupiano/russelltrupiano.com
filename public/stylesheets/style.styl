@@ -21,10 +21,12 @@ global-reset()
  * background color as variables
  */
 main-dark = #062D4E
+main-light = #0A4D85
 main-dark-alt = #1996FF
 main-accent = #FF9C00
 main-accent-alt = #B26D00
 offwhite = #eeeeee
+opaque-gray = rgba(200, 200, 200, 0.99)
 
 // screen sizes
 extralarge = 1400px
@@ -32,6 +34,7 @@ large = 1200px
 mediumlarge = 1050px
 medium = 850px
 small = 650px
+smaller = 600px
 extrasmall = 500px
 
 //Font sizes
@@ -40,6 +43,7 @@ content-large-title = 4em
 content-title = 3em
 content-large = 1.5em
 content-medlarge = 1.35em
+content-nav-item = 1.2em
 content-profile = 1.1em
 content-normal = 1em
 content-small = .85em
@@ -113,29 +117,97 @@ body
                 font-size 8vw
                 padding-bottom 0.75em
 
+                +above(mediumlarge)
+                    font-size 5.6vw
+
+                +below(smaller)
+                    font-size 10vw
+
             .splash-text-tagline
                 text-align center
                 font-size content-large
                 font-size 2.5vw
 
+                +above(mediumlarge)
+                    font-size 1.75vw
+
+                 +below(smaller)
+                    font-size 3.25vw
+
+div#all-content-wrap
+    cf()
+
+.elevated
+    box-shadow: 0px 0px 15px 0px rgba(41,41,41,1);
 
 .page-content-section
     border-top 1px solid rgb(180, 180, 180)
-    box-shadow: 0px 0px 15px 0px rgba(41,41,41,1);
     margin-top 100vh
     display inline-block
     width 100%
-    background rgba(200, 200, 200, 0.99)
-    height 2000px
+    height 1px;
+    background opaque-gray
     z-index 10
     cf();
 
-.color-test
-    background main-accent
-    height 7%
+    section.full-page
+        height 100vh
+
+    section.about-section
+        background opaque-gray
+
+    section.skills-section
+        background opaque-gray
+
+    section.contact-section
+        height 100px
+
+navbar_height_val = 3.25;
+navbar_height = (navbar_height_val)em;
+
+.navbar
     position fixed
-    bottom 0
+    background main-light
+    height navbar_height
+    top (-1 * navbar_height_val)em
     left 0
     width 100%
     cf()
-// Navbar is 7% height and
+    z-index 20
+    overflow-x hidden
+    overflow-y hidden
+
+    .nav-items
+        max-width smaller
+        margin auto
+        height 100%
+
+    .nav-item
+        span(1/3)
+        text-align center
+        color offwhite
+        font-family 'Open Sans'
+        font-weight 300
+        font-size content-nav-item
+        height 100%
+        text-decoration none
+        padding-top (navbar_height_val / 4)em
+
+    .nav-item .value:hover
+        text-decoration underline
+        cursor pointer
+
+
+.navbar.invisible
+    animation slide_up_anim .15s ease forwards
+
+.navbar.visible
+    animation slide_down_anim .25s ease forwards
+
+@keyframes slide_down_anim
+    from {top: (-1 * navbar_height_val)em}
+    to {top: 0;}
+
+@keyframes slide_up_anim
+    from {top: 0;}
+    to {top: (-1 * navbar_height_val)em}
