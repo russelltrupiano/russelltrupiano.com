@@ -1,30 +1,7 @@
-Node Application Starter
+russelltrupiano.com v3
 =================
 
-This is a starter template for building an automated node application. 
+### Getting running
 
-### Before You Do Anything
-
-1. Make Sure you have node installed
-    http://nodejs.org/
-
-### Getting Started
-
-1. Clone this repo
-
-    ``` git clone https://github.com/russelltrupiano/node-starter.git ```
-
-2. cd into the directory
-
-    ``` cd node-starter ```
-
-3. Install project dependencies
-
-    ``` npm run setup ```
-
-4. Start the server
-
-    ``` npm start ```
-
-5. Server should be running at localhost:8080
+Getting running is dead simple. ```npm install; bower install; npm runstartDev;```. Server will be running at localhost:8080 with livereload enabled for anything that matters. Replace ```npm run startDev``` with ```npm start``` to run without livereload (production).
 
