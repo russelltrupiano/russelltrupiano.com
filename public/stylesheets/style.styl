@@ -20,7 +20,10 @@ global-reset()
  * Store the main color and
  * background color as variables
  */
-main-color = #990033
+main-dark = #062D4E
+main-dark-alt = #1996FF
+main-accent = #FF9C00
+main-accent-alt = #B26D00
 offwhite = #eeeeee
 
 // screen sizes
@@ -127,4 +130,12 @@ body
     z-index 10
     cf();
 
+.color-test
+    background main-accent
+    height 7%
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    cf()
 // Navbar is 7% height and
